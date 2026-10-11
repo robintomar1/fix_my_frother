@@ -2,8 +2,10 @@
 """Check that the KiCad schematic matches the traced Connections table.
 
 Exports the schematic's netlist with kicad-cli and compares every pad's net
-against the `## Connections` table in a section document (default:
-power-section.md). Exits non-zero and lists every mismatch if they differ.
+against the `## Connections` table in each section document (default: every
+*-section.md beside this script). A net of "—" means the pad's connection
+hasn't been traced, so the schematic must leave it unconnected. Exits non-zero
+and lists every mismatch if they differ.
 
 This proves the drawing matches the table. Only the meter proves the table
 matches the Board.
@@ -18,6 +20,7 @@ from pathlib import Path
 
 STUDY_DIR = Path(__file__).resolve().parent
 SCHEMATIC = STUDY_DIR / "frother-board.kicad_sch"
+UNTRACED = "—"
 
 
 def table_pads(section: Path) -> dict[str, str]:
@@ -57,7 +60,7 @@ def schematic_pads() -> dict[str, str]:
 
 
 def main() -> int:
-    sections = [Path(a) for a in sys.argv[1:]] or [STUDY_DIR / "power-section.md"]
+    sections = [Path(a) for a in sys.argv[1:]] or sorted(STUDY_DIR.glob("*-section.md"))
     expected = {}
     for section in sections:
         expected.update(table_pads(section))
@@ -68,7 +71,10 @@ def main() -> int:
 
     problems = []
     for pad, net in sorted(expected.items()):
-        if pad not in actual:
+        if net == UNTRACED:
+            if pad in actual:
+                problems.append(f"{pad}: table says untraced, schematic says {actual[pad]!r}")
+        elif pad not in actual:
             problems.append(f"{pad}: table says {net!r}, schematic has it unconnected or missing")
         elif actual[pad] != net:
             problems.append(f"{pad}: table says {net!r}, schematic says {actual[pad]!r}")

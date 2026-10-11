@@ -7,8 +7,8 @@ Tracing, identifying, and redrawing the Board (`KD-F316-V1.0`) as a KiCad schema
 | Section | Issue | Document | Status |
 |---|---|---|---|
 | Power and charging | [#9](https://github.com/robintomar1/fix_my_frother/issues/9) | [power-section.md](power-section.md) | Drafted from photos; **unverified**, waiting on the meter |
-| Motor drive | [#10](https://github.com/robintomar1/fix_my_frother/issues/10) | — | Not started |
-| Button and LEDs | [#11](https://github.com/robintomar1/fix_my_frother/issues/11) | — | Not started |
+| Motor drive | [#10](https://github.com/robintomar1/fix_my_frother/issues/10) | [motor-section.md](motor-section.md) | Drafted from photos; **unverified**, waiting on the meter |
+| Button and LEDs | [#11](https://github.com/robintomar1/fix_my_frother/issues/11) | [button-led-section.md](button-led-section.md) | Parts placed from photos; almost no connections traced yet |
 | U1 identity and how the Board works | [#12](https://github.com/robintomar1/fix_my_frother/issues/12) | — | Not started |
 
 ## Files
@@ -24,7 +24,7 @@ Tracing, identifying, and redrawing the Board (`KD-F316-V1.0`) as a KiCad schema
 python3 hardware/board-study/check_netlist.py [section.md ...]
 ```
 
-Exports the schematic's netlist with `kicad-cli` (KiCad 9) and compares every pad's net with the Connections table(s); defaults to `power-section.md`. Prints `OK` or lists each disagreement. Run it after every schematic edit and every table update.
+Exports the schematic's netlist with `kicad-cli` (KiCad 9) and compares every pad's net with the Connections tables; defaults to every `*-section.md` here. A table net of `—` means "not traced yet", and the schematic must leave that pad open. Prints `OK` or lists each disagreement. Run it after every schematic edit and every table update.
 
 It proves **the drawing matches the table**. Only continuity checks with the meter prove **the table matches the Board**.
 
@@ -37,8 +37,8 @@ It proves **the drawing matches the table**. Only continuity checks with the met
 
 ## Known ERC results
 
-KiCad's electrical rules check is expected to report, for the power section:
+KiCad's electrical rules check is expected to report:
 
-- **U1 pins 3–8 not connected**: deliberate. Their destinations aren't known yet, and marking them "no connect" would hide that. (Pins 1 and 2 carry inferred links to C2 and C1.)
-- **Dangling labels** on `BAT+`, `R7_TO_U1?`, `R6_A?` and `R6_B?`: each is a single-ended connection whose other end, almost certainly a U1 pin, is unknown.
+- **26 unconnected pins**: U1 pins 3–8, LED1–4, R1–R5 and C4. Deliberate: their connections aren't traced yet, and marking them "no connect" would hide that. (U1 pins 1 and 2 carry inferred links to C2 and C1.)
+- **4 dangling labels**: `R7_TO_U1?`, `R6_A?`, `R6_B?` and `KEY?`. Each is a single-ended connection whose other end, almost certainly a U1 pin, is unknown.
 - **"Library 'Device' not in configuration"**: only when run headless before KiCad has been opened once; the GUI's global library table resolves it.

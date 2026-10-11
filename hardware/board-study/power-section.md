@@ -39,14 +39,15 @@ The pad by USB1 is silkscreened `BAT` with no sign visible (solder may cover it)
 
 ### Parts not yet assigned to a section
 
-These may belong to the Cell side of this section or to #10/#11. They're listed here so nothing is silently skipped; the meter session decides.
+These may belong to the Cell side of this section or to another section. They're listed here so nothing is silently skipped; the meter session decides. (R1, R3 and R5 are in [button-led-section.md](button-led-section.md) by position.)
 
 | Ref | Part | Marking | Value | Why it might be here |
 |---|---|---|---|---|
 | R2 | Resistor, ~0603 | `103` (low-confidence read) | 10 kΩ? | Beside C4 on U1's LED-side row: a typical spot for a charge-current-setting resistor |
 | C4 | Capacitor, ~0603 | — | unknown | Beside R2 on U1's LED-side row: possibly a capacitor on the Cell's supply |
-| R1 | Resistor, ~0603 | unreadable | unknown | Near BAT+ |
-| R3, R4, R5 | 0 Ω links, ~1206 | `0` | 0 Ω | Jumpers; R4 sits near BAT+. Each may carry any section's net |
+| R4 | 0 Ω link, ~1206 | `0` | 0 Ω | Jumper between the LED row and BAT+; may carry any section's net |
+
+They're drawn in the schematic with their pins open.
 
 ## Connections
 
@@ -87,7 +88,7 @@ Board **unpowered**. Meter in continuity (beep) mode. Never bridge BAT+ to GND w
 3. **CC pins**: each of R8 and R9 should beep from one end to GND, and from the other end to one of USB1's two middle pins. Note which.
 4. **VBUS**: find which USB1 pin R7's connector-side end beeps to, then which U1 pin(s) beep to R7's other end, to each end of R6, and to that USB1 VBUS pin directly.
 5. **BAT+**: which U1 pin(s) beep to the BAT+ pad. (BAT+ to M+ belongs to #10.)
-6. **Unassigned parts**: for R1–R5 and C4, note which nets each end beeps to, and move each part into this section or note it for #10/#11.
+6. **Unassigned parts**: for R2, R4 and C4, note which nets each end beeps to, and move each part into the section it belongs to.
 
 Post each result as a comment on #9, tick the row above, replace any `?` net with the real one, and re-run `check_netlist.py` after updating the schematic.
 
