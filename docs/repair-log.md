@@ -8,9 +8,8 @@ Each repair step is its own GitHub issue (a sub-issue of #1). When a step is don
 
 Moisture inside the Handle is what most likely killed the Frother. To stop it happening again:
 
-- Rinse **only the Whisk**, after taking it out of the Coupler.
-- Keep water away from the **Motor shaft** and the **End cap**. Wipe the Handle with a damp cloth instead of running it under the tap.
-- Let the Frother dry before putting it away.
+- Rinse **only the Whisk**.
+- Keep water away from the Motor shaft and the **End cap**.
 
 ## Safety rules
 
@@ -27,18 +26,18 @@ These apply to every step that touches the Cell, an unprotected Li-ion cell:
   | Below 2.0 V | **Never charge.** Replace with a pre-tabbed Cell of the confirmed size |
 
 - **Every charge** is attended, on a tile or metal tray. Unplug at the first sign of warmth, a smell, or swelling.
-- **Soldering heat goes only into the Tabs**, at the Board end, never into the Cell body or its terminals.
+- **Soldering heat goes only into the Tabs**, at the Board end, never into the Cell itself.
 - A dead Cell goes to battery recycling, not household trash.
 
 ---
 
-## 2026-10-11: Fault, teardown, and plan
+## 2026-10-11: Fault, disassembly, and plan
 
 ### The fault
 
-The Frother worked normally until about two weeks ago. On 2026-10-10 it did nothing at all when the button was pressed: **no LEDs, no Motor**. It had been rinsed after frothing in the meantime.
+The Frother was last known working about two weeks ago. On 2026-10-10 it did nothing at all when the button was pressed: **no LEDs, no Motor**. It is routinely rinsed after frothing.
 
-### Teardown findings
+### Disassembly findings
 
 The Handle was opened and the internals slid out on their frame. Photos:
 
@@ -56,8 +55,8 @@ The Handle was opened and the internals slid out on their frame. Photos:
 What the photos show:
 
 - **Board** marked `KD-F316-V1.0`, dated 2025-04-09, maker 康图电器. It carries the USB-C port, button K1, LED1–LED4, a single unmarked 8-pin chip U1, resistors R1–R9, capacitors C1–C4, D2 and C3 near the Motor pads, and pads BAT+/BAT− and M+/M−.
-- **Cell**: a single unprotected Li-ion cell, believed to be a 14500 (size not yet measured), joined to the Board by two spot-welded Tabs.
-- **Corrosion**: rust and brown residue on **both Tabs** where they meet the Board, and grime inside the End cap.
+- **Cell**: a single unprotected Li-ion cell, believed to be a 14500 (size not yet measured), with two Tabs spot-welded to the Cell and soldered to the Board.
+- **Corrosion**: rust and brown residue on **both Tabs** where they meet the Board, a rust patch on the Motor's metal casing ([IMG_7894](../images/IMG_7894.jpg)), and grime inside the End cap.
 - **Motor**: a small brushed DC motor with the white Coupler on its shaft.
 
 ### Likely cause
@@ -71,7 +70,7 @@ Preventing this in future is down to how the Frother is rinsed (see the care not
 
 ### The plan
 
-"Fixed" means the original Frother running again: LEDs respond to the button, the Motor runs at every speed setting, it charges until the LEDs show full, and it completes **5 Sessions** on one charge. A multimeter, soldering iron, and isopropyl alcohol are on order; nothing past photography can start until they arrive.
+"Fixed" means the original Frother running again: LEDs respond to the button, the Motor runs at every speed setting, it charges until the LEDs show full, and it completes **5 consecutive Sessions** on one charge. A multimeter, soldering iron, and isopropyl alcohol are on order; nothing past photography can start until they arrive.
 
 | Step | Issue |
 |---|---|
