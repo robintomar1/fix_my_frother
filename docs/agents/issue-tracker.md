@@ -10,6 +10,7 @@ Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all o
 - **Comment on an issue**: `gh issue comment <number> --body "..."`
 - **Apply / remove labels**: `gh issue edit <number> --add-label "..."` / `--remove-label "..."`
 - **Close**: `gh issue close <number> --comment "..."`
+- **Create a label**: the installed `gh` (2.4.0) has no `gh label` command; use `gh api repos/robintomar1/fix_my_frother/labels -f name="..." -f color="..." -f description="..."`. The five triage labels already exist.
 
 The repo is [`robintomar1/fix_my_frother`](https://github.com/robintomar1/fix_my_frother) (remote `origin`). `gh` infers it from `git remote -v` when run inside this clone.
 
