@@ -17,7 +17,7 @@ On the Board, LED4 sits on its own beside K1, and LED1, LED2, LED3 form a row ru
 | Dot 2 | LED2 |
 | Dot 3 | LED3 |
 
-**What the dots mean is not known yet**: speed setting or charge level. That's a question about how the Frother behaved before it died, recorded under Observed behaviour below.
+The three dots show the speed mode while running and the charge level while charging (see Observed behaviour below). Whether the larger window or the power symbol is the fourth light isn't known yet, so the LED4 row of this mapping is the least certain.
 
 ## Parts in this section
 
@@ -71,17 +71,21 @@ Post each result as a comment on #11, replace `—` rows with real nets, tick Ve
 
 ## Observed behaviour
 
-To fill in from memory of how the Frother behaved before it died (the schematic has to explain these):
+How the Frother behaved before it died, as remembered by its owner (2026-10-11). The schematic has to explain these.
 
-- [ ] What does pressing the button do: on/off, cycle speeds, or both?
-- [ ] What do the three dots show: speed setting, charge level, or both at different times?
-- [ ] What does the larger window do while charging, and when full?
-- [ ] LED colours.
+- [x] **Button**: one press turns the Frother on; another press some time later turns it off. Presses in quick succession change the speed mode.
+- [x] **Three dots**: while running, they show the speed mode; while charging, they show the charge level.
+- [ ] **Larger window** (the first circle under the power symbol): not yet known whether it lights, or whether the power symbol itself is the fourth light.
+- [x] **Colour**: all lights are blue.
+- [ ] How many speed modes there are, and how the dots show each one.
 
 ## How the button and LEDs probably work
 
 Hypotheses only:
 
-- **K1 is a single input to U1.** One press, long press, and repeated presses are all decoded by U1. (Rows `K1.*`.)
+- **U1 is a programmed chip, not a fixed-function one.** Telling a single press (on/off) from quick repeated presses (change speed mode) needs timing, and the same three dots show the speed mode while running but the charge level while charging. Both need a program, so U1 is most likely a small microcontroller with its program built in. This points #12's search toward the cheap 8-pin microcontrollers used in small appliances. (Observed behaviour.)
+- **K1 is a single input to U1.** U1 times the presses to tell "on/off" from "change speed mode". (Rows `K1.*`.)
+- **The three dots are U1 outputs it reuses for two jobs:** speed mode while running, charge level while charging. That suggests U1 senses the Cell's voltage (for charge level) and USB power being present (to switch the dots' meaning). The latter fits R7 feeding U1 a "USB present" signal. (Rows `LED1`–`LED3`; power section `R7.*`.)
+- **All the LEDs are blue.** Blue LEDs need about 2.7–3.2 V to light, close to the Cell's own voltage. So the LEDs are probably driven straight from U1's pins at the Cell's voltage, with little or no resistor. That's consistent with only one small resistor (R1) being near the LEDs. (Rows `LED*`, `R1.*`.)
 - **The LEDs may be "charlieplexed".** U1 has only 8 pins. Supply, Cell, GND, Motor and the button plausibly use five, leaving about three for four LEDs. Three pins can drive up to six LEDs if each LED sits *between* two U1 pins instead of between a pin and GND. If so, the meter will show LED pads beeping to U1 pins at **both** ends. (Rows `LED*`.)
 - **R3 and R5 are jumpers.** On a Board with copper on one side only, a 0 Ω link lets one trace hop over another. They probably carry power or GND past the LEDs. (Rows `R3.*`, `R5.*`.)
