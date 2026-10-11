@@ -2,7 +2,7 @@
 
 Part of the Board study ([#9](https://github.com/robintomar1/fix_my_frother/issues/9)). Covers the path from the USB-C port (USB1), through U1, to the Cell's pads (BAT+ / BAT−).
 
-**Status: traced from photos only, nothing verified yet.** Every row below is a hypothesis until it has been checked with the multimeter's continuity mode on the real, unpowered Board. The back of the Board hasn't been photographed yet ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)), so traces that pass through to the back are invisible.
+**Status: traced from photos only, nothing verified yet.** Every row below is a hypothesis until it has been checked with the multimeter's continuity mode on the real Board, with power fully off (USB unplugged and the Cell disconnected). The back of the Board hasn't been photographed yet ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)), so traces that pass through to the back are invisible.
 
 ## How to read this
 
@@ -81,7 +81,7 @@ U1 pins 3–8 are deliberately left unconnected in the schematic: their destinat
 
 ## Meter checklist
 
-Board **unpowered**. Meter in continuity (beep) mode. Never bridge BAT+ to GND with the probes.
+**Power fully off**: USB unplugged *and* the Cell disconnected. Lift the BAT+ Tab at the Board end; the Tab repair ([#7](https://github.com/robintomar1/fix_my_frother/issues/7)) is the natural time, since the Tab comes off then anyway. With the Cell soldered on, the Board is powered and continuity readings are unreliable. Meter in continuity (beep) mode. Never bridge BAT+ to GND with the probes.
 
 1. **Confirm U1 pin 1.** Probe C2's pad nearest U1 against each U1 pin: it should beep on the pin called 1 here. Then C1's U1-side pad: it should beep on pin 2. If either lands elsewhere, re-number U1 before anything else.
 2. **Find GND**: BAT− pad ↔ USB-C shell. Expect a beep. Note which U1 pins beep to GND.

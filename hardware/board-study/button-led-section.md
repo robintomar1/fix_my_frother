@@ -59,7 +59,7 @@ R2, R4 and C4 are still unassigned; see [power-section.md](power-section.md#part
 
 ## Meter checklist
 
-Board **unpowered**. Meter in continuity (beep) mode unless noted. Never bridge BAT+ to GND with the probes.
+**Power fully off**: USB unplugged *and* the Cell disconnected. Lift the BAT+ Tab at the Board end; the Tab repair ([#7](https://github.com/robintomar1/fix_my_frother/issues/7)) is the natural time, since the Tab comes off then anyway. With the Cell soldered on, the Board is powered and continuity readings are unreliable. Meter in continuity (beep) mode unless noted. Never bridge BAT+ to GND with the probes.
 
 1. **K1**: find the two pin pairs (pins that always beep together). Then check which pair beeps to GND, and which U1 pin the other pair reaches. Press the button while probing across the pairs: it should beep only while pressed.
 2. **LED polarity**: in **diode mode**, probe each LED both ways; in the conducting direction the LED often glows faintly. Note which pad is the anode.

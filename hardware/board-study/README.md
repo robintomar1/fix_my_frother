@@ -32,7 +32,7 @@ It proves **the drawing matches the table**. Only continuity checks with the met
 
 1. Trace from photos into the section's Connections table, with evidence and confidence for each pad.
 2. Draw it in KiCad, using net labels that match the table; run the check until it says `OK`.
-3. With the meter, work through the section's checklist on the unpowered Board. Post readings as comments on the section's issue, tick Verified, and replace any `?` placeholder net with the real connection, in both the table and the schematic.
+3. With the meter, work through the section's checklist with power fully off (USB unplugged and the Cell disconnected). Post readings as comments on the section's issue, tick Verified, and replace any `?` placeholder net with the real connection, in both the table and the schematic.
 4. Re-run the check. The section is done when every row is verified and the check passes.
 
 ## Known ERC results

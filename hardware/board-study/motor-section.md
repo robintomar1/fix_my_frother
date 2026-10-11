@@ -32,13 +32,13 @@ Package sizes are estimates from the photos.
 
 ## Meter checklist
 
-Board **unpowered**. Meter in continuity (beep) mode for steps 1–4, resistance for step 5. Never bridge BAT+ to GND with the probes.
+**Power fully off**: USB unplugged *and* the Cell disconnected. Lift the BAT+ Tab at the Board end; the Tab repair ([#7](https://github.com/robintomar1/fix_my_frother/issues/7)) is the natural time, since the Tab comes off then anyway. With the Cell soldered on, the Board is powered and continuity readings are unreliable. Meter in continuity (beep) mode for steps 1–4, resistance for step 5. Never bridge BAT+ to GND with the probes.
 
 1. **M+ ↔ BAT+**: expect a beep. If not, find which net M+ is on.
 2. **D2**: put the meter in **diode mode** across D2 both ways; one direction reads roughly 0.2–0.7 V, the other open. The end that's negative in the conducting direction is the anode. Confirm the anode is on M− and the cathode on M+ / BAT+.
 3. **C3**: which nets each end beeps to (expect one on BAT+, one on M−).
 4. **M− ↔ U1**: which U1 pin beeps to M−. If none, M− goes to the back of the Board: look there for a transistor.
-5. **Motor coil**: resistance across M+ / M− **with the Motor unsoldered or the Board unpowered**, a few ohms is healthy. (This is also the repair's diagnostic step in #5.)
+5. **Motor coil**: resistance across M+ / M− with power fully off, **red probe on M+, black on M−**. That way D2, which sits across the Motor, is reverse-biased and doesn't skew the reading. A few ohms is healthy; near 0 Ω means shorted, no reading means open. (This is also the repair's diagnostic step in #5.)
 
 Post each result as a comment on #10, tick the row above, and re-run `check_netlist.py` after updating the schematic.
 
