@@ -1,0 +1,10 @@
+# KiCad local/session files
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.lck
+~*.lck
+_autosave-*
+\#auto_saved_files#
+*.bak
+__pycache__/
