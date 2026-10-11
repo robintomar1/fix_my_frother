@@ -16,13 +16,15 @@ import sys
 import tempfile
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-SCHEMATIC = HERE / "frother-board.kicad_sch"
+STUDY_DIR = Path(__file__).resolve().parent
+SCHEMATIC = STUDY_DIR / "frother-board.kicad_sch"
 
 
 def table_pads(section: Path) -> dict[str, str]:
     """Map 'REF.PIN' -> net from the section's Connections table."""
     text = section.read_text()
+    if "## Connections" not in text:
+        sys.exit(f"{section.name} has no '## Connections' table")
     body = text.split("## Connections", 1)[1].split("\n## ", 1)[0]
     pads = {}
     for line in body.splitlines():
@@ -55,7 +57,7 @@ def schematic_pads() -> dict[str, str]:
 
 
 def main() -> int:
-    sections = [Path(a) for a in sys.argv[1:]] or [HERE / "power-section.md"]
+    sections = [Path(a) for a in sys.argv[1:]] or [STUDY_DIR / "power-section.md"]
     expected = {}
     for section in sections:
         expected.update(table_pads(section))

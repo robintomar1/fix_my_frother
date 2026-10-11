@@ -39,6 +39,6 @@ It proves **the drawing matches the table**. Only continuity checks with the met
 
 KiCad's electrical rules check is expected to report, for the power section:
 
-- **U1 pins 1–8 not connected**: deliberate. No U1 pin's destination is known yet, and marking them "no connect" would hide that.
-- **Dangling labels** on `BAT+` and the `?` placeholder nets: each is a single-ended connection whose other end, almost certainly a U1 pin, is unknown.
+- **U1 pins 3–8 not connected**: deliberate. Their destinations aren't known yet, and marking them "no connect" would hide that. (Pins 1 and 2 carry inferred links to C2 and C1.)
+- **Dangling labels** on `BAT+`, `R7_TO_U1?`, `R6_A?` and `R6_B?`: each is a single-ended connection whose other end, almost certainly a U1 pin, is unknown.
 - **"Library 'Device' not in configuration"**: only when run headless before KiCad has been opened once; the GUI's global library table resolves it.
