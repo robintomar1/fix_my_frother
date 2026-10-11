@@ -47,6 +47,6 @@ Post each result as a comment on #10, tick the row above, and re-run `check_netl
 Hypotheses only, each tied to rows above:
 
 - **The Motor is switched on its low side.** M+ sits on BAT+ permanently; U1 connects M− to GND to run the Motor. (Rows `M1.*`.)
-- **Speed settings are PWM.** With one switch and no other parts in the path, the only practical way to give several speeds is to switch M− on and off rapidly and vary the on-time. (Rows `M1.2`.)
+- **Speed modes are PWM.** With one switch and no other parts in the path, the only practical way to give three Motor speeds is to switch M− on and off rapidly and vary the on-time. (Rows `M1.2`.)
 - **D2 protects U1 from the Motor's switch-off spike.** A motor coil produces a voltage spike every time it's switched off, which PWM does thousands of times a second. D2 gives that current a path back to BAT+. (Rows `D2.*`.)
 - **C3 suppresses brush noise.** Brushed motors spark at their brushes; a capacitor across the terminals absorbs that noise before it reaches U1. The 50 V rating covers the spikes. (Rows `C3.*`.)

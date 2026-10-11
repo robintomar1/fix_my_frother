@@ -70,7 +70,7 @@ Preventing this in future is down to how the Frother is rinsed (see the care not
 
 ### The plan
 
-"Fixed" means the original Frother running again: LEDs respond to the button, the Motor runs at every speed setting, it charges until the LEDs show full, and it completes **5 consecutive Sessions** on one charge. A multimeter, soldering iron, and isopropyl alcohol are on order; nothing past photography can start until they arrive.
+"Fixed" means the original Frother running again: LEDs respond to the button, the Motor runs in all three Speed modes, it charges until the LEDs show full, and it completes **5 consecutive Sessions** on one charge. A multimeter, soldering iron, and isopropyl alcohol are on order; nothing past photography can start until they arrive.
 
 | Step | Issue |
 |---|---|

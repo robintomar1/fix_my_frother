@@ -73,11 +73,11 @@ Post each result as a comment on #11, replace `—` rows with real nets, tick Ve
 
 How the Frother behaved before it died, as remembered by its owner (2026-10-11). The schematic has to explain these.
 
-- [x] **Button**: one press turns the Frother on; another press some time later turns it off. Presses in quick succession change the speed mode.
-- [x] **Three dots**: while running, they show the speed mode; while charging, they show the charge level.
+- [x] **Button**: one press turns the Frother on; another press some time later turns it off. Presses in quick succession change the Speed mode.
+- [x] **Three dots**: while running, they show the Speed mode; while charging, they show the charge level.
 - [x] **Power symbol**: never lights.
 - [x] **First circle** (under the power symbol): lights when the Frother is on.
-- [x] **Speed modes**: three. Each lights **one** dot: dot 1 for speed mode 1 (slowest, the default when switched on), dot 2 for mode 2, dot 3 for mode 3 (fastest).
+- [x] **Speed modes**: three. Each lights **one** dot: dot 1 for Speed mode 1 (slowest, the default when switched on), dot 2 for mode 2, dot 3 for mode 3 (fastest).
 - [x] **Colour**: all lights are blue.
 - [ ] Whether the first circle also lights while charging.
 
@@ -85,9 +85,9 @@ How the Frother behaved before it died, as remembered by its owner (2026-10-11).
 
 Hypotheses only:
 
-- **U1 is a programmed chip, not a fixed-function one.** Telling a single press (on/off) from quick repeated presses (change speed mode) needs timing, and the same three dots show the speed mode while running but the charge level while charging. Both need a program, so U1 is most likely a small microcontroller with its program built in. This points #12's search toward the cheap 8-pin microcontrollers used in small appliances. (Observed behaviour.)
-- **K1 is a single input to U1.** U1 times the presses to tell "on/off" from "change speed mode". (Rows `K1.*`.)
-- **The three dots are U1 outputs it reuses for two jobs:** speed mode while running, charge level while charging. That suggests U1 senses the Cell's voltage (for charge level) and USB power being present (to switch the dots' meaning). The latter fits R7 feeding U1 a "USB present" signal. (Rows `LED1`–`LED3`; power section `R7.*`.)
+- **U1 is a programmed chip, not a fixed-function one.** Telling a single press (on/off) from quick repeated presses (change Speed mode) needs timing, and the same three dots show the Speed mode while running but the charge level while charging. Both need a program, so U1 is most likely a small microcontroller with its program built in. This points #12's search toward the cheap 8-pin microcontrollers used in small appliances. (Observed behaviour.)
+- **K1 is a single input to U1.** U1 times the presses to tell "on/off" from "change Speed mode". (Rows `K1.*`.)
+- **The three dots are U1 outputs it reuses for two jobs:** Speed mode while running, charge level while charging. That suggests U1 senses the Cell's voltage (for charge level) and USB power being present (to switch the dots' meaning). The latter fits R7 feeding U1 a "USB present" signal. (Rows `LED1`–`LED3`; power section `R7.*`.)
 - **All the LEDs are blue.** Blue LEDs need about 2.7–3.2 V to light, close to the Cell's own voltage. So the LEDs are probably driven straight from U1's pins at the Cell's voltage, with little or no resistor. That's consistent with only one small resistor (R1) being near the LEDs. (Rows `LED*`, `R1.*`.)
 - **The LEDs may be "charlieplexed".** U1 has only 8 pins. Supply, Cell, GND, Motor and the button plausibly use five, leaving about three for four LEDs. Three pins can drive up to six LEDs if each LED sits *between* two U1 pins instead of between a pin and GND. If so, the meter will show LED pads beeping to U1 pins at **both** ends. The observed behaviour fits: at most two LEDs are ever lit together (the power circle plus one speed dot), which U1 can show by flicking between them faster than the eye can see. (Rows `LED*`.)
 - **R3 and R5 are jumpers.** On a Board with copper on one side only, a 0 Ω link lets one trace hop over another. They probably carry power or GND past the LEDs. (Rows `R3.*`, `R5.*`.)

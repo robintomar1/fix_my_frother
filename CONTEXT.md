@@ -49,6 +49,10 @@ _Avoid_: Teardown, reverse engineering, clone
 
 ## Use
 
+**Speed mode**:
+One of the Frother's three Motor speeds, changed by pressing the button in quick succession and shown by one lit dot; mode 1 is the slowest and the default at switch-on, mode 3 the fastest.
+_Avoid_: Speed setting, speed level, gear
+
 **Session**:
 One frothing run of about 30 seconds; five consecutive Sessions on a full charge is the bar for calling the Frother fixed.
 _Avoid_: Cycle, run
