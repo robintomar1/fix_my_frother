@@ -8,9 +8,9 @@
 
 **Behaviour that could tell them apart without a meter:**
 - The owner's description matches WD8001's 2 s window: a press some time later turns the Frother off, and quick presses change Speed mode.
-- Still to recall:
-  - [ ] Did the Frother stop on its own after about 10 minutes of running? (WD8001 does.)
-  - [ ] Did the first circle light while charging and go out when full? (WD8001's LED4 does.)
+- Not known from memory (2026-10-11). Observe once the Frother works again; neither needs a meter:
+  - [ ] **Auto-off:** run it for more than 10 minutes, Whisk in water. Does it stop on its own at about 10 minutes? (WD8001 does.)
+  - [ ] **Charging light:** while charging (#6), does the first circle light, and does it go out when full? (WD8001's LED4 does.)
 
 ## Clues used
 
