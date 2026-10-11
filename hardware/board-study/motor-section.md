@@ -2,7 +2,7 @@
 
 Part of the Board study ([#10](https://github.com/robintomar1/fix_my_frother/issues/10)). Covers the path from the Cell (BAT+) through the Motor (M+ / M−), D2 and C3, to whichever U1 pin switches the Motor.
 
-**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). The back of the Board carries nothing but the Cell: no parts and no copper (owner's inspection, 2026-10-11), so every trace is on the front.
+**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). The back of the Board carries nothing but the Cell: no parts (owner's inspection, 2026-10-11) and, in IMG_7894, bare board with no visible copper, so every trace is on the front.
 
 ## Parts in this section
 
