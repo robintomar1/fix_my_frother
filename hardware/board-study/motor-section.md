@@ -2,7 +2,7 @@
 
 Part of the Board study ([#10](https://github.com/robintomar1/fix_my_frother/issues/10)). Covers the path from the Cell (BAT+) through the Motor (M+ / M−), D2 and C3, to whichever U1 pin switches the Motor.
 
-**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). Back-side photos ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)) are still missing.
+**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). The back of the Board carries nothing but the Cell: no parts and no copper (owner's inspection, 2026-10-11), so every trace is on the front.
 
 ## Parts in this section
 
@@ -15,7 +15,7 @@ Package sizes are estimates from the photos.
 | C3 | Capacitor, ~0603 | — | unknown, rated 50 V (silkscreen) | Beside D2's M− end, next to the BAT+ pad (IMG_7895, IMG_7898) |
 | BT1 | The Cell | — | — | Shared with the power section; only `BT1.1` (BAT+) matters here |
 
-**No switching transistor is visible anywhere on the front of the Board.** Every other part is accounted for, so either U1 switches the Motor with a transistor built into the chip, or the switch is on the back (not yet photographed).
+**No switching transistor is visible anywhere on the front of the Board.** Every other part is accounted for, and the back carries nothing but the Cell, so U1 must switch the Motor with a transistor built into the chip.
 
 ## Connections
 
@@ -28,7 +28,7 @@ Package sizes are estimates from the photos.
 | C3.1 | BAT+ | 50 V-rated capacitor beside the Motor pads: typical noise suppression across the Motor | inferred | [ ] |
 | C3.2 | M- | As above | inferred | [ ] |
 
-`M-` is a single-ended net in the drawing until a U1 pin (or a back-side transistor) is found to switch it.
+`M-` is a single-ended net in the drawing until the U1 pin that switches it is found.
 
 ## Meter checklist
 
@@ -37,7 +37,7 @@ Package sizes are estimates from the photos.
 1. **M+ ↔ BAT+**: expect a beep. If not, find which net M+ is on.
 2. **D2**: put the meter in **diode mode** across D2 both ways; one direction reads roughly 0.2–0.7 V, the other open. The end that's negative in the conducting direction is the anode. Confirm the anode is on M− and the cathode on M+ / BAT+.
 3. **C3**: which nets each end beeps to (expect one on BAT+, one on M−).
-4. **M− ↔ U1**: which U1 pin beeps to M−. If none, M− goes to the back of the Board: look there for a transistor.
+4. **M− ↔ U1**: which U1 pin beeps to M−. With no other switching part on the Board, one should. If none does, re-check D2 and C3: one of them would then have to be something other than a diode or capacitor.
 5. **Motor coil**: resistance across M+ / M− with power fully off, **red probe on M+, black on M−**. That way D2, which sits across the Motor, is reverse-biased and doesn't skew the reading. A few ohms is healthy; near 0 Ω means shorted, no reading means open. (This is also the repair's diagnostic step in #5.)
 
 Post each result as a comment on #10, tick the row above, and re-run `check_netlist.py` after updating the schematic.

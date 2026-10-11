@@ -15,7 +15,7 @@
 ## Clues used
 
 - **Package:** SOP-8, 1.27 mm pitch, unmarked. Pin 1 (dimple and dot) is on the USB-C-side row; pins 5–8 face the LEDs. An exposed pad (ESOP-8) can't be seen from the top, so ESOP-8 parts aren't excluded.
-- **No inductor, no other IC, no discrete transistor.** U1 must charge the Cell linearly *and* switch the Motor itself. Any chip that needs a boost inductor is out.
+- **No inductor, no other IC, no discrete transistor.** U1 must charge the Cell linearly *and* switch the Motor itself. Any chip that needs a boost inductor is out. The back of the Board carries nothing but the Cell (owner's inspection, 2026-10-11), so nothing is hidden there. An unrelated frother board seen on Alibaba (silkscreen "C1864", a board code rather than a part number) splits the job across a separate charger chip, a transistor and an 8-pin controller; ours has none of those helpers.
 - **Pin 1:** C2 (~0603) has a pad on it, which suggests a supply or VIN decoupling cap.
 - **Pin 2:** C1 (~1206) has a pad near it, which suggests a VBAT/BAT cap.
 - **Far row (pins 5–8):** R2 ("103", 10 kΩ?) and C4 sit beside it. R2 is a candidate charge-current-setting resistor.
@@ -186,7 +186,7 @@ Do these on the **unpowered** Board, with the BAT+ Tab unsoldered from the Board
    - WD8001: 2 (unconfirmed). CX3320: 2. CX3358B: 8. CX3318B: 4.
 4. **Motor switch:** M− pad to each pin.
    - CX3320: 8. CX3358B: 5. CX3318B: 1. WD8001: unknown ("OUT").
-   - If no pin beeps to M−, U1 doesn't switch the Motor directly. Look on the back for a transistor.
+   - One pin should beep to M−: the back of the Board is bare (owner's inspection), so there is no other place for a Motor switch.
 5. **USB input:** USB VBUS, both directly and through R6 (0 Ω), to each pin.
    - WD8001: 1. CX3320: 6. CX3358B: 1. CX3318B: 5.
 6. **R7's U1-side end:** where does it go?

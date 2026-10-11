@@ -2,7 +2,7 @@
 
 Part of the Board study ([#11](https://github.com/robintomar1/fix_my_frother/issues/11)). Covers the power button (K1), the four indicator LEDs (LED1–4), and the parts clustered around them.
 
-**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). A net of `—` means the pad's connection hasn't been traced at all: the part is drawn, its pins are left open. Back-side photos ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)) are still missing.
+**Status: traced from photos only, nothing verified yet.** Conventions (confidence levels, `?` placeholders, the Verified box) are the same as in [power-section.md](power-section.md#how-to-read-this). A net of `—` means the pad's connection hasn't been traced at all: the part is drawn, its pins are left open. The back of the Board carries nothing but the Cell: no parts and no copper (owner's inspection, 2026-10-11), so every trace is on the front.
 
 ## What the Handle shows
 

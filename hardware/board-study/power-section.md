@@ -2,7 +2,7 @@
 
 Part of the Board study ([#9](https://github.com/robintomar1/fix_my_frother/issues/9)). Covers the path from the USB-C port (USB1), through U1, to the Cell's pads (BAT+ / BAT−).
 
-**Status: traced from photos only, nothing verified yet.** Every row below is a hypothesis until it has been checked with the multimeter's continuity mode on the real Board, with power fully off (USB unplugged and the Cell disconnected). The back of the Board hasn't been photographed yet ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)), so traces that pass through to the back are invisible.
+**Status: traced from photos only, nothing verified yet.** Every row below is a hypothesis until it has been checked with the multimeter's continuity mode on the real Board, with power fully off (USB unplugged and the Cell disconnected). The back of the Board carries nothing but the Cell: no parts and no copper (owner's inspection, 2026-10-11), so every trace is on the front.
 
 ## How to read this
 
