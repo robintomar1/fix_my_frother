@@ -37,7 +37,7 @@ Resistance from each U1 pin to the BAT− and BAT+ pads, Cell off, USB unplugged
 | 4 | 6 MΩ | 62.1 kΩ | Signal |
 | 5 | 8.8 kΩ | 8.8 kΩ | Via ~10 kΩ, probably R2 (`103`): a charge-current-setting pin? |
 | 6 | 73 kΩ | 66.5 kΩ | Signal |
-| 7 | 73.5 (unit to confirm) | 66 kΩ | Signal |
+| 7 | 73.5 kΩ | 66 kΩ | Signal |
 | 8 | 0.0 Ω | 3.6 Ω | **GND** |
 
 **Scoring** (per the meter checks below): a candidate that misses on GND or BAT is out.
