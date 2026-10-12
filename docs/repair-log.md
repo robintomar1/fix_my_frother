@@ -149,3 +149,7 @@ C1's pads measure ≈0 Ω to BAT+ and to BAT− respectively, so C1 sits directl
 With the Cell removed, the Board was connected to USB. **U1 got hot immediately**; the Motor didn't spin and no LEDs lit. A healthy U1 with no Cell to charge and nothing to run should stay cool, so this strongly suggests **U1 has failed internally**, consistent with the 3.6 Ω between its Cell pin (2) and ground pin (8). A 5.9 MΩ BAT+/BAT− reading was taken with USB connected and is discarded (resistance needs the Board unpowered). USB stays disconnected from now on.
 
 To confirm: re-measure BAT+/BAT− unpowered after cleaning; if still ~3.6 Ω, lift one end of C1 and re-measure. Still 3.6 Ω with C1 out means U1 is the failed part.
+
+### Cleaning didn't clear the short
+
+After cleaning twice and with USB disconnected, BAT+ to BAT− reads **about 3.0 Ω**, essentially the same short as before (3.6 Ω). Corrosion is ruled out; the culprit is C1 or U1. Lifting one end of C1 (next session) decides between them.
