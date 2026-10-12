@@ -85,3 +85,13 @@ Preventing this in future is down to how the Frother is rinsed (see the care not
 If diagnosis finds the Motor is dead, it gets a same-size replacement. If the Board is dead, a `KD-F316` replacement is searched for, and the Frother is replaced if none turns up.
 
 Separately, the **Board study** ([#9](https://github.com/robintomar1/fix_my_frother/issues/9)–[#12](https://github.com/robintomar1/fix_my_frother/issues/12)) traces the Board and redraws it as a KiCad schematic, to understand how it works. It doesn't hold up the repair, but moves to the front of the queue if the Board turns out to be the fault.
+
+## 2026-10-12: The Cell is dead
+
+The multimeter arrived. The **Cell reads 0.0 V**, measured directly on its bare metal ends, and the reading was re-checked: meter on DC volts, probes in the right sockets, and the meter confirmed working on a known battery ([#5](https://github.com/robintomar1/fix_my_frother/issues/5)). The calliper confirms the Cell is **14 × 50 mm, a 14500** ([#3](https://github.com/robintomar1/fix_my_frother/issues/3)).
+
+Under the safety rules (below 2.0 V: never charge), the Cell will be **replaced** with a pre-tabbed 14500 ([#6](https://github.com/robintomar1/fix_my_frother/issues/6)). That fits the likely cause: corrosion from rinse water leaking current until the Cell was completely flat.
+
+Because a Li-ion cell rarely reaches a true 0 V on its own, the Board gets one extra check before the new Cell goes in: with the old Cell disconnected, resistance between the BAT+ and BAT− pads. Near 0 Ω would mean the Board itself is shorting the Cell and has to be fixed first.
+
+Still to measure for the diagnosis: Motor resistance across M+/M−.
