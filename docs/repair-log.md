@@ -105,3 +105,9 @@ New photos: the back of the Board ([1791776091833](../images/1791776091833.jpg),
 The Cell has been removed from the Board. Measured on its own it reads **165 mV**, still far below the 2.0 V limit, so it stays a replacement ([#6](https://github.com/robintomar1/fix_my_frother/issues/6)). On the Board it read 0.0 V; the small rise once removed is consistent with the Board (or the corrosion) having been drawing on it, which the BAT+/BAT− short check will confirm or rule out.
 
 With the Cell off and USB unplugged, the Board is now fully unpowered: the right moment for the short check, a clean Motor resistance reading, and the Board study meter checklists.
+
+### Short across the Cell's pads
+
+With the Cell off and USB unplugged, **BAT+ to BAT− reads about 3.6 Ω**, the same with the probes either way round. A healthy, idle Board should read thousands of ohms or more. 3.6 Ω would pull roughly 1 A from a full Cell, which explains how the Cell was drained to almost nothing.
+
+Leading hypothesis: M− is stuck connected to GND, either U1's internal Motor switch has failed closed or corrosion bridges M− to ground, so the Motor's coil (a few ohms) sits permanently across the Cell. Being checked with M−↔BAT−, M+↔M− and M+↔BAT+ readings. **No new Cell goes in until the short is found and fixed.**
