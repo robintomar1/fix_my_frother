@@ -26,7 +26,7 @@ Package sizes are estimates from the photos, scaled against U1's 1.27 mm pin pit
 | Ref | Part | Marking | Value | Notes |
 |---|---|---|---|---|
 | USB1 | USB-C receptacle, 6-pin power-only | — | — | Pins: GND, VBUS, CC1, CC2, VBUS, GND, plus shell lugs |
-| R8 | Resistor, ~0603 | `512` | 5.1 kΩ | Beside USB1 |
+| R8 | Resistor, ~0603 | `512` | 5.1 kΩ (**measured 5.07 kΩ** in circuit, 2026-10-12) | Beside USB1 |
 | R9 | Resistor, ~0603 | `512` | 5.1 kΩ | Beside USB1 |
 | R7 | Resistor, ~0603 | `102` | 1 kΩ | Between USB1 and U1 |
 | R6 | 0 Ω link, ~1206 | `0` | 0 Ω | Above C1; role unknown |
