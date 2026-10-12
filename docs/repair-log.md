@@ -111,3 +111,23 @@ With the Cell off and USB unplugged, the Board is now fully unpowered: the right
 With the Cell off and USB unplugged, **BAT+ to BAT− reads about 3.6 Ω**, the same with the probes either way round. A healthy, idle Board should read thousands of ohms or more. 3.6 Ω would pull roughly 1 A from a full Cell, which explains how the Cell was drained to almost nothing.
 
 Leading hypothesis: M− is stuck connected to GND, either U1's internal Motor switch has failed closed or corrosion bridges M− to ground, so the Motor's coil (a few ohms) sits permanently across the Cell. Being checked with M−↔BAT−, M+↔M− and M+↔BAT+ readings. **No new Cell goes in until the short is found and fixed.**
+
+### Narrowing the short
+
+The owner remembers the Frother **running on its own** one day before it died.
+
+Readings (Cell off, USB unplugged):
+
+| Between | Reading |
+|---|---|
+| M+ and BAT+ | 0 Ω (same connection, as expected) |
+| M− and BAT− | 30–550 Ω, varying |
+| M+ and M− (the Motor) | 80–500 Ω, varying |
+
+The Motor path adds up to well over 100 Ω, so it **can't** explain the steady 3.6 Ω across BAT+/BAT−: there's a **separate short from BAT+ to BAT−**. Candidates: U1 failed internally, a cracked capacitor across the Cell's supply, or corrosion around U1.
+
+Two more findings:
+- **The Motor itself is suspect.** A healthy coil reads a few ohms; 80–500 Ω and unstable points to water-corroded brushes or commutator, consistent with the rust on its casing.
+- **The leaky M−-to-ground path** (30–550 Ω) is one way the Motor could have run on its own; moisture across the button's pads is another.
+
+Next: map each U1 pin to BAT+ and to BAT−, and measure across each capacitor, to locate the short.
