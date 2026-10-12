@@ -143,3 +143,9 @@ The same readings rule out three of the four U1 candidates; WD8001 remains consi
 ### C1 confirmed across the Cell; Board cleaned
 
 C1's pads measure ≈0 Ω to BAT+ and to BAT− respectively, so C1 sits directly across the Cell's supply, in parallel with the short. In circuit it reads the same 3.6 Ω, which can't distinguish C1 from U1. The whole Board has been cleaned twice with isopropyl alcohol ([#4](https://github.com/robintomar1/fix_my_frother/issues/4)).
+
+### USB power test: U1 heats up immediately
+
+With the Cell removed, the Board was connected to USB. **U1 got hot immediately**; the Motor didn't spin and no LEDs lit. A healthy U1 with no Cell to charge and nothing to run should stay cool, so this strongly suggests **U1 has failed internally**, consistent with the 3.6 Ω between its Cell pin (2) and ground pin (8). A 5.9 MΩ BAT+/BAT− reading was taken with USB connected and is discarded (resistance needs the Board unpowered). USB stays disconnected from now on.
+
+To confirm: re-measure BAT+/BAT− unpowered after cleaning; if still ~3.6 Ω, lift one end of C1 and re-measure. Still 3.6 Ω with C1 out means U1 is the failed part.
