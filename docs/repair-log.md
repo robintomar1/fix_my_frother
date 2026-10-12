@@ -131,3 +131,11 @@ Two more findings:
 - **The leaky M−-to-ground path** (30–550 Ω) is one way the Motor could have run on its own; moisture across the button's pads is another.
 
 Next: map each U1 pin to BAT+ and to BAT−, and measure across each capacitor, to locate the short.
+
+### The short is at U1: pin 2 (Cell) to pin 8 (ground)
+
+Measuring each U1 pin to BAT+ and BAT− (table in [u1-candidates.md](../hardware/board-study/u1-candidates.md#measured-so-far-2026-10-12)) shows **U1 pin 2 is the Cell connection (0.2 Ω to BAT+) and pin 8 is ground (0.0 Ω to BAT−)**, so the 3.6 Ω short sits between those two pins. Three possible culprits: U1 failed internally, C1 (at pin 2) cracked, or corrosion bridging the pads.
+
+Plan to tell them apart: clean (#4) and re-measure; if still shorted, lift one end of C1 and re-measure; if it survives both, U1 has failed and the Board-fault path applies (search for a `KD-F316` replacement, else replace the Frother).
+
+The same readings rule out three of the four U1 candidates; WD8001 remains consistent.
