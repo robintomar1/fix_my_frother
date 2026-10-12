@@ -11,7 +11,7 @@ Package sizes are estimates from the photos.
 | Ref | Part | Marking | Value | Notes |
 |---|---|---|---|---|
 | M1 | The Motor (off-Board), small brushed DC | — | — | Soldered directly to the M+ / M− pads at the end of the Board |
-| D2 | Diode, 2-terminal, ~SOD-123 | not readable | — | One pad sits right at the M− pad; the other points toward M+ / BAT+ (IMG_7895, IMG_7898). Polarity band not visible |
+| D2 | Diode, ~SOD-123FL / SMA | reads `ZW` as photographed, i.e. **`M2`** rotated 180° (IMG_7912) | `M2` is the usual code for a 1 A rectifier (1N4002 class) | One pad sits right at the M− pad; the stripe (cathode) is on the other end, toward M+ / BAT+ (IMG_7912) |
 | C3 | Capacitor, ~0603 | — | unknown, rated 50 V (silkscreen) | Beside D2's M− end, next to the BAT+ pad (IMG_7895, IMG_7898) |
 | BT1 | The Cell | — | — | Shared with the power section; only `BT1.1` (BAT+) matters here |
 
@@ -23,8 +23,8 @@ Package sizes are estimates from the photos.
 |---|---|---|---|---|
 | M1.1 | BAT+ | Typical arrangement: Motor's + side tied to the Cell, − side switched. M+ is the pad nearest BAT+ | inferred | [ ] |
 | M1.2 | M- | M− pad, labelled on the silkscreen (IMG_7895, IMG_7898) | seen-2 | [ ] |
-| D2.2 | M- | One D2 pad sits right at the M− pad (IMG_7895, IMG_7898); that it's the anode is inferred from the flyback role | inferred | [ ] |
-| D2.1 | BAT+ | A diode across the Motor clamps the voltage spike when the Motor is switched off; its cathode goes to the + side | inferred | [ ] |
+| D2.2 | M- | The un-striped (anode) end of D2 sits right at the M− pad (IMG_7895, IMG_7898, IMG_7912) | seen-1 | [ ] |
+| D2.1 | BAT+ | Striped (cathode) end points toward M+ / BAT+ (IMG_7912); that it connects there is inferred from the diode's job of clamping the Motor's switch-off spike | inferred | [ ] |
 | C3.1 | BAT+ | 50 V-rated capacitor beside the Motor pads: typical noise suppression across the Motor | inferred | [ ] |
 | C3.2 | M- | As above | inferred | [ ] |
 

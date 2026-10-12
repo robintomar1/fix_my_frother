@@ -14,6 +14,8 @@
 
 ## Clues used
 
+- **Marking (2026-10-12):** no part number, but a small **circled logo reading "LN"** (possibly "UN") is moulded into the pin-1 corner (IMG_7911, IMG_7913). It may be the chip maker's logo. Web searches (2026-10-12) did not identify it, and none of the candidates below has been matched to it yet.
+
 - **Package:** SOP-8, 1.27 mm pitch, unmarked. Pin 1 (dimple and dot) is on the USB-C-side row; pins 5–8 face the LEDs. An exposed pad (ESOP-8) can't be seen from the top, so ESOP-8 parts aren't excluded.
 - **No inductor, no other IC, no discrete transistor.** U1 must charge the Cell linearly *and* switch the Motor itself. Any chip that needs a boost inductor is out. The back of the Board carries nothing but the Cell (owner's inspection, 2026-10-11), so nothing is hidden there. An unrelated frother board seen on Alibaba (silkscreen "C1864", a board code rather than a part number) splits the job across a separate charger chip, a transistor and an 8-pin controller; ours has none of those helpers.
 - **Pin 1:** C2 (~0603) has a pad on it, which suggests a supply or VIN decoupling cap.

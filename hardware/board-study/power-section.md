@@ -15,7 +15,7 @@ Part of the Board study ([#9](https://github.com/robintomar1/fix_my_frother/issu
 
 ## U1 orientation
 
-U1 is an unmarked SOP-8. **Pin 1 is the pin in the corner nearest C2**, on the row that faces C1/C2 (the USB-C side). Evidence: the moulded dimple on the package is in that corner, and the silkscreen has a dot beside that pin (IMG_7895, IMG_7899). Pins are numbered counter-clockwise viewed from above: 1–4 along the USB-C-side row, then 5–8 along the LED-side row.
+U1 is an unmarked SOP-8. **Pin 1 is the pin in the corner nearest C2**, on the row that faces C1/C2 (the USB-C side). Evidence: the package has a small circled logo reading "LN" (possibly "UN") moulded into that corner, and the silkscreen has a dot beside that pin (IMG_7895, IMG_7899, IMG_7911, IMG_7913). Pins are numbered counter-clockwise viewed from above: 1–4 along the USB-C-side row, then 5–8 along the LED-side row.
 
 If the meter session shows this is wrong, every U1 pin number below shifts, so it's the first item on the checklist.
 
@@ -32,10 +32,10 @@ Package sizes are estimates from the photos, scaled against U1's 1.27 mm pin pit
 | R6 | 0 Ω link, ~1206 | `0` | 0 Ω | Above C1; role unknown |
 | C1 | Capacitor, ~1206 | — | unknown | Lower pad between U1 pins 2 and 3, nearer 2 |
 | C2 | Capacitor, ~0603 | — | unknown | One pad directly over U1 pin 1 |
-| U1 | Unmarked SOP-8 IC | none visible | — | Identity is #12's job |
+| U1 | SOP-8 IC, no part number | circled logo "LN" (or "UN") at the pin-1 corner | — | Identity is #12's job |
 | BT1 | The Cell (off-Board) | — | ~3.7 V Li-ion | Soldered via Tabs to BAT+ / BAT− |
 
-The pad by USB1 is silkscreened `BAT` with no sign visible (solder may cover it). Calling it **BAT−** is an inference from it sharing the ground pour with USB1's shell, and from the other pad being labelled `BAT+`.
+The pad by USB1 is silkscreened **`BAT-`** (IMG_7911; in earlier photos the sign was hidden). It shares the large ground pour with USB1's shell lugs.
 
 ### Parts not yet assigned to a section
 
@@ -43,7 +43,7 @@ These may belong to the Cell side of this section or to another section. They're
 
 | Ref | Part | Marking | Value | Why it might be here |
 |---|---|---|---|---|
-| R2 | Resistor, ~0603 | `103` (low-confidence read) | 10 kΩ? | Beside C4 on U1's LED-side row: a typical spot for a charge-current-setting resistor |
+| R2 | Resistor, ~0603 | `103` (clear in IMG_7913) | 10 kΩ | Beside C4 on U1's LED-side row: a typical spot for a charge-current-setting resistor |
 | C4 | Capacitor, ~0603 | — | unknown | Beside R2 on U1's LED-side row: possibly a capacitor on the Cell's supply |
 | R4 | 0 Ω link, ~1206 | `0` | 0 Ω | Jumper between the LED row and BAT+; may carry any section's net |
 
@@ -56,7 +56,7 @@ They're drawn in the schematic with their pins open.
 | USB1.S1 | GND | Shell lugs sit inside the large copper pour that also holds the BAT− pad (IMG_7895, IMG_7899) | seen-2 | [ ] |
 | USB1.A12 | GND | Outer USB-C pins are GND by the standard; pour reaches the connector | inferred | [ ] |
 | USB1.B12 | GND | As above | inferred | [ ] |
-| BT1.2 | GND | BAT− pad sits in the same pour as USB1's shell lugs (IMG_7895, IMG_7899); net name is an inference (see above) | seen-2 | [ ] |
+| BT1.2 | GND | Pad labelled `BAT-` (IMG_7911) sits in the same pour as USB1's shell lugs (IMG_7895, IMG_7899, IMG_7911) | seen-2 | [ ] |
 | USB1.A9 | VBUS | VBUS by the USB-C standard | inferred | [ ] |
 | USB1.B9 | VBUS | VBUS by the USB-C standard | inferred | [ ] |
 | USB1.A5 | CC1 | Traces run from the connector to R8/R9 (IMG_7895, IMG_7899), but which pin lands on which resistor isn't visible | inferred | [ ] |

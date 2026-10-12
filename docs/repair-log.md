@@ -95,3 +95,7 @@ Under the safety rules (below 2.0 V: never charge), the Cell will be **replaced*
 Because a Li-ion cell rarely reaches a true 0 V on its own, the Board gets one extra check before the new Cell goes in: with the old Cell disconnected, resistance between the BAT+ and BAT− pads. Near 0 Ω would mean the Board itself is shorting the Cell and has to be fixed first.
 
 Still to measure for the diagnosis: Motor resistance across M+/M−.
+
+### Board photos and markings
+
+New photos: the back of the Board ([1791776091833](../images/1791776091833.jpg), [1791776119984](../images/1791776119984.jpg)) is bare apart from the Cell, and rust is visible where the Tab bends round the Board's edge. Sharper close-ups of the front ([IMG_7909](../images/IMG_7909.jpg), [IMG_7911](../images/IMG_7911.jpg), [IMG_7912](../images/IMG_7912.jpg), [IMG_7913](../images/IMG_7913.jpg)) show the `BAT-` label, R2's `103` marking, D2's `M2` marking and cathode stripe, and a small circled "LN" logo on U1 with no part number. This completes the photo record for [#3](https://github.com/robintomar1/fix_my_frother/issues/3). R8 measured 5.07 kΩ in circuit, matching its `512` marking.
