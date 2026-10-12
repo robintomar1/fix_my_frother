@@ -70,10 +70,10 @@ They're drawn in the schematic with their pins open.
 | R7.2 | R7_TO_U1? | Runs toward U1; destination pin unknown | inferred | [ ] |
 | R6.1 | R6_A? | Unknown | inferred | [ ] |
 | R6.2 | R6_B? | Unknown | inferred | [ ] |
-| C1.1 | BAT+ | Lower pad sits against U1 pin 2 (IMG_7895), which is measured as BAT+; C1's own pad not yet probed | inferred | [ ] |
+| C1.1 | BAT+ | ≈0 Ω to the BAT+ pad (2026-10-12, Cell off) | measured | [x] |
 | U1.2 | BAT+ | 0.2 Ω to the BAT+ pad (2026-10-12, Cell off) | measured | [x] |
 | U1.8 | GND | 0.0 Ω to the BAT− pad (2026-10-12, Cell off) | measured | [x] |
-| C1.2 | GND | Decoupling capacitors return to GND | inferred | [ ] |
+| C1.2 | GND | ≈0 Ω to the BAT− pad (2026-10-12, Cell off) | measured | [x] |
 | C2.1 | U1_PIN1? | Left pad sits directly over U1 pin 1 (IMG_7895); no trace visible | inferred | [ ] |
 | U1.1 | U1_PIN1? | As above | inferred | [ ] |
 | C2.2 | GND | Decoupling capacitors return to GND | inferred | [ ] |

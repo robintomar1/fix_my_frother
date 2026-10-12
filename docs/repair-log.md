@@ -139,3 +139,7 @@ Measuring each U1 pin to BAT+ and BAT− (table in [u1-candidates.md](../hardwar
 Plan to tell them apart: clean (#4) and re-measure; if still shorted, lift one end of C1 and re-measure; if it survives both, U1 has failed and the Board-fault path applies (search for a `KD-F316` replacement, else replace the Frother).
 
 The same readings rule out three of the four U1 candidates; WD8001 remains consistent.
+
+### C1 confirmed across the Cell; Board cleaned
+
+C1's pads measure ≈0 Ω to BAT+ and to BAT− respectively, so C1 sits directly across the Cell's supply, in parallel with the short. In circuit it reads the same 3.6 Ω, which can't distinguish C1 from U1. The whole Board has been cleaned twice with isopropyl alcohol ([#4](https://github.com/robintomar1/fix_my_frother/issues/4)).
