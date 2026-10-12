@@ -25,6 +25,27 @@
 - **Behaviour:** one button. One press means on/off; quick repeat presses cycle the 3 Speed modes (mode 1 by default). The Motor is switched low-side, with D2 and C3 across its pads.
 - **LEDs:** 4 blue LEDs. One is a "power" indicator; 3 dots show the Speed mode while running and the charge level while charging.
 
+## Measured so far (2026-10-12)
+
+Resistance from each U1 pin to the BAT− and BAT+ pads, Cell off, USB unplugged. Note that BAT+ and BAT− are themselves only 3.6 Ω apart (a fault), so a pin tied to either reads about the same to both.
+
+| U1 pin | to BAT− | to BAT+ | Role |
+|---|---|---|---|
+| 1 | 991 Ω | 1 kΩ | Via ~1 kΩ; unknown |
+| 2 | 3.6 Ω | 0.2 Ω | **BAT** (the Cell) |
+| 3 | 73 kΩ | 66.4 kΩ | Signal |
+| 4 | 6 MΩ | 62.1 kΩ | Signal |
+| 5 | 8.8 kΩ | 8.8 kΩ | Via ~10 kΩ, probably R2 (`103`): a charge-current-setting pin? |
+| 6 | 73 kΩ | 66.5 kΩ | Signal |
+| 7 | 73.5 (unit to confirm) | 66 kΩ | Signal |
+| 8 | 0.0 Ω | 3.6 Ω | **GND** |
+
+**Scoring** (per the meter checks below): a candidate that misses on GND or BAT is out.
+- **CX3320** (BAT = 2 ✓, GND = 7 ✗): **ruled out**.
+- **CX3358B** (VBAT = 8 ✗): **ruled out**.
+- **CX3318B** (BAT = 4 ✗, GND = 8 ✓): **ruled out**.
+- **WD8001** (BAT = 2 ✓, GND = 8 ✓, from the unconfirmed pin list): **still consistent**. Its list puts VIN on pin 1 and the Motor output on an unlisted pin; next checks are VBUS → pin 1 and M− → each pin.
+
 ## Candidates
 
 Ranked by overall fit. None fits every clue.

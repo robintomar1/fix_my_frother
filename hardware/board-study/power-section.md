@@ -10,6 +10,7 @@ Part of the Board study ([#9](https://github.com/robintomar1/fix_my_frother/issu
   - `seen-2`: the connection is visible in two or more photos.
   - `seen-1`: visible in one photo only.
   - `inferred`: not visible; follows from part values, position, or standard practice. A row can have a visible trace and still be `inferred` if the net's identity isn't visible.
+  - `measured`: confirmed with the meter on the unpowered Board; the Verified box is ticked.
 - **Verified** is ticked only after a continuity check on the real Board. Record the reading in a comment on #9.
 - The **Connections** table is the expected netlist: `check_netlist.py` compares it against the KiCad schematic. One row per pad; `Net` names are the schematic's net labels. A net name ending in `?` is a placeholder for a connection whose identity isn't known yet.
 
@@ -69,8 +70,9 @@ They're drawn in the schematic with their pins open.
 | R7.2 | R7_TO_U1? | Runs toward U1; destination pin unknown | inferred | [ ] |
 | R6.1 | R6_A? | Unknown | inferred | [ ] |
 | R6.2 | R6_B? | Unknown | inferred | [ ] |
-| C1.1 | U1_PIN2? | Lower pad sits against U1 pin 2 (IMG_7895); no trace visible | inferred | [ ] |
-| U1.2 | U1_PIN2? | As above | inferred | [ ] |
+| C1.1 | BAT+ | Lower pad sits against U1 pin 2 (IMG_7895), which is measured as BAT+; C1's own pad not yet probed | inferred | [ ] |
+| U1.2 | BAT+ | 0.2 Ω to the BAT+ pad (2026-10-12, Cell off) | measured | [x] |
+| U1.8 | GND | 0.0 Ω to the BAT− pad (2026-10-12, Cell off) | measured | [x] |
 | C1.2 | GND | Decoupling capacitors return to GND | inferred | [ ] |
 | C2.1 | U1_PIN1? | Left pad sits directly over U1 pin 1 (IMG_7895); no trace visible | inferred | [ ] |
 | U1.1 | U1_PIN1? | As above | inferred | [ ] |

@@ -39,6 +39,6 @@ It proves **the drawing matches the table**. Only continuity checks with the met
 
 KiCad's electrical rules check is expected to report:
 
-- **26 unconnected pins**: U1 pins 3–8, LED1–4, R1–R5 and C4. Deliberate: their connections aren't traced yet, and marking them "no connect" would hide that. (U1 pins 1 and 2 carry inferred links to C2 and C1.)
+- **25 unconnected pins**: U1 pins 3–7, LED1–4, R1–R5 and C4. Deliberate: their connections aren't traced yet, and marking them "no connect" would hide that. (U1 pin 1 carries an inferred link to C2; pins 2 and 8 are measured as BAT+ and GND.)
 - **4 dangling labels**: `R7_TO_U1?`, `R6_A?`, `R6_B?` and `KEY?`. Each is a single-ended connection whose other end, almost certainly a U1 pin, is unknown.
 - **"Library 'Device' not in configuration"**: only when run headless before KiCad has been opened once; the GUI's global library table resolves it.
