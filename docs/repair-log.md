@@ -99,3 +99,9 @@ Still to measure for the diagnosis: Motor resistance across M+/M−.
 ### Board photos and markings
 
 New photos: the back of the Board ([1791776091833](../images/1791776091833.jpg), [1791776119984](../images/1791776119984.jpg)) is bare apart from the Cell, and rust is visible where the Tab bends round the Board's edge. Sharper close-ups of the front ([IMG_7909](../images/IMG_7909.jpg), [IMG_7911](../images/IMG_7911.jpg), [IMG_7912](../images/IMG_7912.jpg), [IMG_7913](../images/IMG_7913.jpg)) show the `BAT-` label, R2's `103` marking, D2's `M2` marking and cathode stripe, and a small circled "LN" logo on U1 with no part number. This completes the photo record for [#3](https://github.com/robintomar1/fix_my_frother/issues/3). R8 measured 5.07 kΩ in circuit, matching its `512` marking.
+
+## 2026-10-12: The Cell is off the Board
+
+The Cell has been removed from the Board. Measured on its own it reads **165 mV**, still far below the 2.0 V limit, so it stays a replacement ([#6](https://github.com/robintomar1/fix_my_frother/issues/6)). On the Board it read 0.0 V; the small rise once removed is consistent with the Board (or the corrosion) having been drawing on it, which the BAT+/BAT− short check will confirm or rule out.
+
+With the Cell off and USB unplugged, the Board is now fully unpowered: the right moment for the short check, a clean Motor resistance reading, and the Board study meter checklists.
